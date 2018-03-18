@@ -1,0 +1,95 @@
+.chang-w-h{
+    height: 590px;
+}
+.position{
+    position: absolute;;
+    background: #385a94;
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    /* float: left; */
+}
+.font{
+    font-size: 23px;
+}
+.margin{
+    margin-right: 30px;
+}
+.font:hover{
+    cursor: pointer;
+}
+.point-position{
+    position: relative;
+}
+.mr-t{
+    margin-top: -3px;
+}
+.bg-title-img{
+    text-align: center;
+    padding-top: 19px;
+    background-color: #ffe000;
+}
+.img-title{
+    width: 270px;
+}
+.margin-auto{
+    margin: auto;
+}
+
+body{
+    background-color: #b05bffd9;
+}
+
+.bg-footer{
+    background-color: #343a40e0;
+}
+.points{
+    position: absolute;
+    background-color: #ff0000;
+    text-align: center;
+    color: red;
+    width: 3%;
+    border-radius: 50px;
+}
+.bg-card-title{
+    padding: 16px;
+    border-radius: 2px;
+    color: white;
+    font-weight: bold;
+}
+.fix-score{
+    position: relative;
+    right: 15px;
+    bottom: 14px;
+    margin-top: 44px;
+}
+.fix-ur-name{
+    position: relative;
+    right: 33px;
+    bottom: 2px;
+    margin-top: 25px;
+}
+.p-and-textLeft{
+    padding: 5px 0px 1px 0px;
+    text-align: left;
+}
+.height-card{
+    height: 100%;
+}
+.fnt-itaic{
+    font-style: italic;
+}
+.line-height{
+    line-height: 1.4;
+}
+.bg-green{
+    background-color: #007968;
+}
+.fix-inThe-middle{
+    margin-right: 15px;
+    margin-left: 55px;
+}
+.p-score{
+    padding: 4px;
+}
