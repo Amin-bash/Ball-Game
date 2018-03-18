@@ -207,10 +207,7 @@ function removePointsInsideBall(ball) {
                         // var createBalls = createBalls();
                         score++;
                         scorePoints.innerHTML = score;
-                        console.log('score is ' + score);
                         countPoints++;
-                        console.log(countPoints);
-
                         // get the width and height of the ball
                         var ballWidth = ball.offsetWidth;
                         // console.log('BallHeight: ' + ballHeight);
@@ -283,7 +280,7 @@ function createBalls() {
     //create the elements of the points
     var element = document.createElement('span');
     playground.appendChild(element);
-    var text = document.createTextNode(countPoints);
+    var text = document.createTextNode('o');
     element.appendChild(text);
 
     // create classes for the points
