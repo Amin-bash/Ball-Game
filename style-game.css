@@ -1,5 +1,5 @@
-.chang-w-h{
-    height: 590px;
+ .chang-w-h{
+    height: 100%
 }
 .position{
     position: absolute;;
@@ -132,7 +132,9 @@ body{
     .none{
         visibility: hidden;
     }
-
+    .chang-w-h{
+        height: 43000%;
+    }
 }
 @media(max-width: 766px){
     .fix-ur-name{
@@ -187,8 +189,8 @@ body{
         width: 298px;
         left: 16px;
     }
-    .chang-w-h {
-        height: 400px;
+    .chang-w-h{
+        height: 35000%
     }
 }
 

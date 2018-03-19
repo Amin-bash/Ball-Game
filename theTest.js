@@ -1,4 +1,10 @@
 
+
+
+// if((screenHeight <= 590 + 100)) {
+//     playground = screenHeight - 100 + 'px';
+// }
+
 // lunch modal when page start
 $('#exampleModal').modal();
 // get input for modal
@@ -42,6 +48,18 @@ var myButLeft = document.getElementById('btnLeft');
 // get the playground element
 var playground = document.getElementById('main-bg');
 var ball = document.getElementById('theBall');
+var getHeightScreen = screen.height + 'px';
+
+// console.log(playHeight);
+// if(getHeightScreen > 500 + 100){
+//     playground.style.height = '590PX';
+//     alert('fjsj')
+// }
+if(getHeightScreen < 500 + 100) {
+    var playHeight = playground.style.height = getHeightScreen;
+    console.log(getHeightScreen < 500 + 100);
+}
+
 
 // to move top by mouse onclick 
 myButTop.onclick = function() {
