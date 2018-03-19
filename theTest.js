@@ -49,14 +49,14 @@ var myButLeft = document.getElementById('btnLeft');
 var playground = document.getElementById('main-bg');
 var ball = document.getElementById('theBall');
 var getHeightScreen = screen.height + 'px';
-
-// console.log(playHeight);
+var playHeight = playground.height = getHeightScreen;
+console.log(playHeight);
 // if(getHeightScreen > 500 + 100){
 //     playground.style.height = '590PX';
 //     alert('fjsj')
 // }
 if(getHeightScreen < 500 + 100) {
-    var playHeight = playground.style.height = getHeightScreen;
+    var playHeight = playground.height = getHeightScreen;
     console.log(getHeightScreen < 500 + 100);
 }
 
@@ -298,7 +298,7 @@ function createBalls() {
     //create the elements of the points
     var element = document.createElement('span');
     playground.appendChild(element);
-    var text = document.createTextNode('o');
+    var text = document.createTextNode('');
     element.appendChild(text);
 
     // create classes for the points
