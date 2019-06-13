@@ -1,160 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <title>Game in javascript</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-zFzXNZnkXgOSk/hRVQNKFU1ZqC9h18Ge1sp4XCwupvrh3zLMRHclbusmMKTznUnX" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style-game.css"  media="screen">
-  </head>
-  <body>
-    <div class="container-fluid bg-title-img">
-      <img src="img/playball.png" class="img-title text-center">
-    </div>
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col-md-3 offset-md-3 fix-score bg-info rounded p-3">
-          <h5 class=" text-left fnt-itaic p-score">score: <span id="scorePoints"> </span></h5>
-        </div>
-        <div class="col-md-3 offset-md-2  fix-ur-name">
-          <div class="bg-danger rounded p-and-textLeft">
-            <div class="col-md-12 ">
-              <h5 class="fnt-itaic">Your Name :</h5>
-              <h4 id="headerUserName" class="font-weight-bold">&nbsp;</h4>
-            </div>
-           
-          </div>
-        </div>           
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class=" row margin-auto">
-            <div class="col-lg-2 col-md-12  p-0 text-center fix-inThe-middle">
-              <div class="card bg-dark fnt-card1 height-card">
-                  <h5 class="card-title fnt-card-title pt-3 bg-card-title bg-danger fnt-itaic">explain how to play the game</h5>
-                <div class="card-body text-white font-weight-bold pb-2 pt-0">
-                  <p class="mb-1"><i class="card-text fa fa-arrow-circle-up font"></i> this arrow to move it up</p>
-                  <p class="mb-1"> <i class="card-text fa fa-arrow-circle-down font"></i> this arrow to move it down</p>
-                  <p class="mb-1"><i class="card-text fa fa-arrow-circle-left font mr-1"></i>this aroow to move it left</p>
-                  <p class="last-arrow-explain"><i class="card-text fa fa-arrow-circle-right font"></i> this arrow to move it right</p>
-                </div>
-                <h5 class="card-title pt-3 bg-card-title bg-green fnt-itaic mb-0 footer-card line-height">I hope to feel injoy with my small game. the description you will find it in the top of the page good luck</h5>
-              </div>           
-            </div>
-            <div class="col-lg-8 col-md-12 p-0">
-                <div id="main-bg" class="bg-dark rounded chang-w-h">
-                    <div id="theBall" class="position">
-                        <span class="mb-0 mt-0"><i id="btnTop" class="font fa fa-arrow-circle-up mt-1 text-danger"></i></span>
-                        <p class="mr-t mb-0"><i id="btnLeft" class="fa fa-arrow-circle-left margin font text-danger"></i><i id="btnRight" class="font fa fa-arrow-circle-right text-danger"></i></p>
-                        <span class="mb-0"><i id="btnDown" class="fa fa-arrow-circle-down font text-danger mr-t"></i></span>
-                    </div>
-                </div>
-            </div> 
-          </div>    
-        </div> 
-      </div>
-    </div>
 
-   <div class="container mt-4">
-     <div class="row">
-       <div class="col-md-5">
-           <!-- Modal  -->
-          <div class="modal fade" id="exampleModal" tabindex="-1">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">You can enter your name here </h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="modalUserName">UserName</label>
-                      <input class="form-control" placeholder="Login Username" type="text" id="modalUserName">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button class="btn btn-primary" data-dismiss="modal">save</button>
-                </div>
+<head>
+  <title>Game in javascript</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-zFzXNZnkXgOSk/hRVQNKFU1ZqC9h18Ge1sp4XCwupvrh3zLMRHclbusmMKTznUnX" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style-game.css" media="screen">
+</head>
+
+<body>
+  <div class="container-fluid bg-title-img">
+    <img src="img/playball.png" class="img-title text-center">
+  </div>
+
+  <!-- Timer  -->
+  <div class="container mb-4">
+    <div class="row justify-content-center">
+      <div class="col-md-7 ">
+        <h1 id="time" class="mt-4 mb-0 text-success"></h1>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-3 offset-md-3 fix-score bg-info rounded p-3">
+        <h5 class=" text-left fnt-itaic p-score">score: <span id="scorePoints"> </span></h5>
+      </div>
+      <div class="col-md-3 offset-md-2  fix-ur-name">
+        <div class="bg-danger rounded p-and-textLeft">
+          <div class="col-md-12 ">
+            <h5 class="fnt-itaic">Your Name :</h5>
+            <h4 id="headerUserName" class="font-weight-bold">&nbsp;</h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class=" row margin-auto">
+          <div class="col-lg-2 col-md-12  p-0 text-center fix-inThe-middle">
+            <div class="card bg-dark fnt-card1 height-card">
+              <h5 class="card-title fnt-card-title pt-3 bg-card-title bg-danger fnt-itaic">explain how to play the game
+              </h5>
+              <div class="card-body text-white font-weight-bold pb-2 pt-0">
+                <p class="mb-1"><i class="card-text fa fa-arrow-circle-up font"></i> this arrow to move it up</p>
+                <p class="mb-1"> <i class="card-text fa fa-arrow-circle-down font"></i> this arrow to move it down</p>
+                <p class="mb-1"><i class="card-text fa fa-arrow-circle-left font mr-1"></i>this aroow to move it left
+                </p>
+                <p class="last-arrow-explain"><i class="card-text fa fa-arrow-circle-right font"></i> this arrow to move
+                  it right</p>
+              </div>
+              <h5 class="card-title pt-3 bg-card-title bg-green fnt-itaic mb-0 footer-card line-height">I hope you enjoy
+                my small game. the description you will find it in the top of the page, good luck</h5>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 p-0 max-height">
+            <div id="main-bg" class="bg-dark rounded chang-w-h">
+              <div id="theBall" class="position">
+                <span class="mb-0 mt-0"><i id="btnTop" class="font fa fa-arrow-circle-up mt-1 text-danger"></i></span>
+                <p class="mr-t mb-0"><i id="btnLeft" class="fa fa-arrow-circle-left margin font text-danger"></i><i
+                    id="btnRight" class="font fa fa-arrow-circle-right text-danger"></i></p>
+                <span class="mb-0"><i id="btnDown" class="fa fa-arrow-circle-down font text-danger mr-t"></i></span>
               </div>
             </div>
           </div>
-       </div>
-     </div>
-   </div>
-   <div class="container-fluid none">
-    <div class="row bg-footer p-1">
-        <div class="col-md-12 ">
-            <div class="mt-5">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                            <p class="pl-3 font-footer-title font-weight-bold text-white">About<span style="font-weight: 100;"> us</span></p>
-                            <hr>
-                            <ul class="ul font-li">
-                                <li class="text-muted">contact</li>
-                                <li class="text-muted">Our partners</li>
-                                <li class="text-muted">Advertising Online</li>
-                                <li class="text-muted">site map</li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                              <p class="pl-3 font-footer-title font-weight-bold text-white">Need<span style="font-weight: 100;"> help?</span></p>
-                              <hr>
-                              <ul class="ul font-li">
-                                  <li class="text-muted">How do o ass an offer</li>
-                                  <li class="text-muted">How do i find a frind</li>
-                                  <li class="text-muted">price list</li>
-                                  <li class="text-muted">offece of the place</li>
-                              </ul>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                              <p class="pl-3 font-footer-title font-weight-bold text-white">User<span style="font-weight: 100;"> area</span></p>
-                              <hr>
-                              <ul class="ul font-li">
-                                  <li class="text-muted">Register</li>
-                                  <li class="text-muted">Login Dearler</li>
-                                  <li class="text-muted">Add an offer</li>
-                                  <li class="text-muted">News</li>
-                              </ul>
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                              <p class="pl-3 font-footer-title font-weight-bold text-white">Find<span style="font-weight: 100;"> us here</span></p>
-                              <hr>
-                              <div class="pl-3">
-                                  <span class="the-small-title  text-dark rounded p-1 px-2">f</span>
-                                  <span class="the-small-title  text-dark rounded p-1 px-2">t</span>
-                                  <span class="the-small-title  text-dark rounded p-1 px-2">in</span>
-                              </div>    
-                        </div>
-                        
-                            
-                      <div class="col-md-12">
-                              <hr>
-                      </div>
-                        <div class="col-md-4 col-sm-6">
-                          
-                            <p class="text-muted">@2018 Creat by power.Amin</p>
-                        </div>
-                    </div>
-                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-5">
+        <!-- Modal  -->
+        <div class="modal fade modal-name" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">You can enter your name here </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="modalUserName">UserName</label>
+                    <input class="form-control" placeholder="Login Username" type="text" id="modalUserName">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary btn-save" data-dismiss="modal">save</button>
+              </div>
             </div>
           </div>
         </div>
-       </div> 
-    
+      </div>
+    </div>
+  </div>
 
-    
 
-  <script src="theTest.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>          
-  </body>
+
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-5">
+        <!-- Modal  -->
+        
+
+        <!--// This Modal for explain how the game work-->
+        <div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-1" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h2 class="modal-title text-success font-weight-bold" id="memberModalLabel-1">Welcome To Boxes Game</h2>
+                  </div>
+                  <div class="modal-body">
+                      <h4 class="text-success">How can you play the game.</h4>
+                      <p class="discrip">You have many boxes in your screen.</p>
+                      <p>You should choose both boxes of the same color and you have time you should finish all the boxes that have the same color before the one minute end</p>
+
+                      <p class="text-warning font-weight-bold">You Will See Your Result After The Time Will Finish</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-primary continue" data-dismiss="modal">Continue</button>                      
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!--// This for result one star-->
+  <div class="modal fade" id="one-star" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-2"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-danger font-weight-bold" id="memberModalLabel-2">Welcome To Boxes Game</h2>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-danger">Unfortunately You Should Try Again</h4>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+          <i class="fa fa-star " aria-hidden="true"></i>
+          <i class="fa fa-star " aria-hidden="true"></i>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-start-again" data-dismiss="modal">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--// This for result two star-->
+  <div class="modal fade" id="two-stars" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-3"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-success font-weight-bold" id="memberModalLabel-3">Welcome To Boxes Game</h2>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-success">Congratulations This is Your Score</h4>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-start-again" data-dismiss="modal">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--// This for result three star-->
+  <div class="modal fade" id="three-stars" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-4"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-success font-weight-bold" id="memberModalLabel-4">Welcome To Boxes Game</h2>
+        </div>
+        <div class="modal-body">
+          <h4 class="text-success">Congratulations You Win In This Game</h4>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+          <i class="fa fa-star text-warning" aria-hidden="true"></i>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-start-again" data-dismiss="modal">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid none">
+    <div class="row bg-footer p-1">
+      <div class="col-md-12 ">
+        <div class="mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6">
+                <p class="pl-3 font-footer-title font-weight-bold text-white">About<span style="font-weight: 100;">
+                    us</span></p>
+                <hr>
+                <ul class="ul font-li">
+                  <li class="text-muted">contact</li>
+                  <li class="text-muted">Our partners</li>
+                  <li class="text-muted">Advertising Online</li>
+                  <li class="text-muted">site map</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <p class="pl-3 font-footer-title font-weight-bold text-white">Need<span style="font-weight: 100;">
+                    help?</span></p>
+                <hr>
+                <ul class="ul font-li">
+                  <li class="text-muted">How do o as an offer</li>
+                  <li class="text-muted">How do i find a frind</li>
+                  <li class="text-muted">price list</li>
+                  <li class="text-muted">offece of the place</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <p class="pl-3 font-footer-title font-weight-bold text-white">User<span style="font-weight: 100;">
+                    area</span></p>
+                <hr>
+                <ul class="ul font-li">
+                  <li class="text-muted">Register</li>
+                  <li class="text-muted">Login Dearler</li>
+                  <li class="text-muted">Add an offer</li>
+                  <li class="text-muted">News</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-sm-6">
+                <p class="pl-3 font-footer-title font-weight-bold text-white">Find<span style="font-weight: 100;"> us
+                    here</span></p>
+                <hr>
+                <div class="pl-3">
+                  <span class="the-small-title  text-dark rounded p-1 px-2">f</span>
+                  <span class="the-small-title  text-dark rounded p-1 px-2">t</span>
+                  <span class="the-small-title  text-dark rounded p-1 px-2">in</span>
+                </div>
+              </div>
+
+
+              <div class="col-md-12">
+                <hr>
+              </div>
+              <div class="col-md-4 col-sm-6">
+
+                <p class="text-muted">@2018 Creat by power.Amin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

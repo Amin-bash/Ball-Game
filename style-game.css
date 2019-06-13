@@ -10,6 +10,9 @@
     text-align: center;
     /* float: left; */
 }
+.max-height {
+    max-height: 570px;
+}
 .font{
     font-size: 23px;
 }
@@ -21,6 +24,9 @@
 }
 .point-position{
     position: relative;
+}
+#time{
+    margin-left: 10px;
 }
 .mr-t{
     margin-top: -3px;
@@ -167,6 +173,12 @@ body{
         border-radius: 50px;
     }
 }
+@media(max-width: 470px) {
+    #time{
+        font-size: 32px;
+        margin-left: 10px;
+    }
+}
 @media(max-width: 400px){
     .points {
         position: absolute;
@@ -194,5 +206,28 @@ body{
         height: 35000%
     }
 }
+@media(max-width: 375px){
+    .font{
+        font-size: 16px;
+    }
+    .position {
+        height: 58px;
+        width: 60px;
+    }
+    .mr-t {
+        margin-top: -6px;
+        height: 18px;
+
+    }
+    .margin {
+        margin-right: 20px;
+    }
+
+    #time{
+        font-size: 27px;
+        margin-left: 10px;
+    }
+}
+
 
 
