@@ -22,64 +22,61 @@
 
 <body>
   <div class="container-fluid bg-title-img">
-    <img src="img/playball.png" class="img-title text-center">
+    <img src="img/playball.png" class="img-title">
   </div>
 
   <!-- Timer  -->
   <div class="container mb-4">
-    <div class="row justify-content-center">
-      <div class="col-md-7 ">
-        <h1 id="time" class="mt-4 mb-0 text-success"></h1>
-      </div>
+    <div class="text-center">
+      <h1 id="time" class="mt-4 mb-0 text-success"></h1>
     </div>
   </div>
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col-md-3 offset-md-3 fix-score bg-info rounded p-3">
-        <h5 class=" text-left fnt-itaic p-score">score: <span id="scorePoints"> </span></h5>
-      </div>
-      <div class="col-md-3 offset-md-2  fix-ur-name">
-        <div class="bg-danger rounded p-and-textLeft">
-          <div class="col-md-12 ">
-            <h5 class="fnt-itaic">Your Name :</h5>
-            <h4 id="headerUserName" class="font-weight-bold">&nbsp;</h4>
-          </div>
 
+  <div class="container mt-3">
+    <div class="score-name-container">
+
+      <div class="score-section">
+        <h5>score: <span id="scorePoints"> </span></h5>
+      </div>
+      <div class="username-section">
+        <h5>Your Name :</h5>
+        <h4 id="headerUserName">&nbsp;</h4>
+      </div>
+
+    </div>
+
+    <div class="play-info-container">
+
+      <div class="info-section">
+        <div class="card">
+          <h5 class="card-title font-bold">explain how to play the game
+          </h5>
+          <div class="card-body font-bold">
+            <p><i class="card-text fa fa-arrow-circle-up"></i> this arrow to move it up</p>
+            <p> <i class="card-text fa fa-arrow-circle-down"></i> this arrow to move it down</p>
+            <p><i class="card-text fa fa-arrow-circle-left"></i>this arrow to move it left
+            </p>
+            <p class=""><i class="card-text fa fa-arrow-circle-right"></i> this arrow to move
+              it right</p>
+          </div>
+          <h5 class="card-title font-bold">I hope you enjoy
+            my small game. the description you will find it in the top of the page, good luck</h5>
+        </div>
+      </div>
+
+      <div class="playground-section">
+        <div id="main-bg" class="bg-playground">
+          <div id="theBall" class="position">
+            <span><i id="btnTop" class="fa fa-arrow-circle-up"></i></span>
+            <p><i id="btnLeft" class="fa fa-arrow-circle-left"></i>
+               <i id="btnRight"class="fa fa-arrow-circle-right"></i>
+            </p>
+            <span><i id="btnDown" class="fa fa-arrow-circle-down"></i></span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class=" row margin-auto">
-          <div class="col-lg-2 col-md-12  p-0 text-center fix-inThe-middle">
-            <div class="card bg-dark fnt-card1 height-card">
-              <h5 class="card-title fnt-card-title pt-3 bg-card-title bg-danger fnt-itaic">explain how to play the game
-              </h5>
-              <div class="card-body text-white font-weight-bold pb-2 pt-0">
-                <p class="mb-1"><i class="card-text fa fa-arrow-circle-up font"></i> this arrow to move it up</p>
-                <p class="mb-1"> <i class="card-text fa fa-arrow-circle-down font"></i> this arrow to move it down</p>
-                <p class="mb-1"><i class="card-text fa fa-arrow-circle-left font mr-1"></i>this aroow to move it left
-                </p>
-                <p class="last-arrow-explain"><i class="card-text fa fa-arrow-circle-right font"></i> this arrow to move
-                  it right</p>
-              </div>
-              <h5 class="card-title pt-3 bg-card-title bg-green fnt-itaic mb-0 footer-card line-height">I hope you enjoy
-                my small game. the description you will find it in the top of the page, good luck</h5>
-            </div>
-          </div>
-          <div class="col-lg-8 col-md-12 p-0 max-height">
-            <div id="main-bg" class="bg-dark rounded chang-w-h">
-              <div id="theBall" class="position">
-                <span class="mb-0 mt-0"><i id="btnTop" class="font fa fa-arrow-circle-up mt-1 text-danger"></i></span>
-                <p class="mr-t mb-0"><i id="btnLeft" class="fa fa-arrow-circle-left margin font text-danger"></i><i
-                    id="btnRight" class="font fa fa-arrow-circle-right text-danger"></i></p>
-                <span class="mb-0"><i id="btnDown" class="fa fa-arrow-circle-down font text-danger mr-t"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 
   <div class="container mt-4">
@@ -99,7 +96,8 @@
                 <form>
                   <div class="form-group">
                     <label for="modalUserName">UserName</label>
-                    <input class="form-control" placeholder="Login Username" type="text" id="modalUserName">
+                    <input class="form-control" maxlength="8" placeholder="Login Username" type="text"
+                      id="modalUserName">
                   </div>
                 </form>
               </div>
@@ -113,41 +111,38 @@
     </div>
   </div>
 
-
-
-
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-5">
         <!-- Modal  -->
-        
-
         <!--// This Modal for explain how the game work-->
-        <div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-1" aria-hidden="true">
+        <div class="modal fade modal-info" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-1"
+          aria-hidden="true">
           <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h2 class="modal-title text-success font-weight-bold" id="memberModalLabel-1">Welcome To Boxes Game</h2>
-                  </div>
-                  <div class="modal-body">
-                      <h4 class="text-success">How can you play the game.</h4>
-                      <p class="discrip">You have many boxes in your screen.</p>
-                      <p>You should choose both boxes of the same color and you have time you should finish all the boxes that have the same color before the one minute end</p>
-
-                      <p class="text-warning font-weight-bold">You Will See Your Result After The Time Will Finish</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-primary continue" data-dismiss="modal">Continue</button>                      
-                  </div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-success font-weight-bold" id="memberModalLabel-1">Welcome To Boxes Game</h2>
               </div>
+              <div class="modal-body">
+                <h4 class="text-success">How can you play the game.</h4>
+                <p>You have many boxes in your screen.</p>
+                <p>You should choose both boxes of the same color and you have time you should finish all the boxes that
+                  have the same color before the one minute end</p>
+
+                <p class="text-warning font-weight-bold">You Will See Your Result After The Time Will Finish</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-primary continue" data-dismiss="modal">Continue</button>
+              </div>
+            </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!--// This for result one star-->
-  <div class="modal fade" id="one-star" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-2"
+  <div class="modal fade" id="one-star" tabindex="-2" role="dialog" aria-labelledby="memberModalLabel-2"
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -168,7 +163,7 @@
   </div>
 
   <!--// This for result two star-->
-  <div class="modal fade" id="two-stars" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel-3"
+  <div class="modal fade" id="two-stars" tabindex="-3" role="dialog" aria-labelledby="memberModalLabel-3"
     aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

@@ -1,11 +1,11 @@
 // lunch modal when page start
 $('.modal-info').modal({
-	keyboaed: false,
+	keyboard: false,
 	backdrop: false
 });
 $('.continue').click(function() {
 	$('.modal-name').modal({
-		keyboaed: false,
+		keyboard: false,
 		backdrop: false
 	});
 });
@@ -16,6 +16,9 @@ var myInputName = document.getElementById('modalUserName');
 myInputName.onkeyup = function() {
 	interName.innerHTML = myInputName.value;
 };
+
+//if game is started
+var itIsStarted = false;
 
 // for block the scroll when you press the keyboard
 window.addEventListener(
@@ -71,6 +74,7 @@ myButTop.onclick = function() {
 
 // to move right by mouse onclick
 myButRight.onclick = function() {
+
 	// get step
 	var step = calculateStepForRightBallMovement();
 
@@ -105,8 +109,11 @@ myButLeft.onclick = function() {
 	removePointsInsideBall(ball);
 };
 
-// this function to move the ball from the Keybord
+// this function to move the ball from the Keyboard
 document.onkeydown = function(event) {
+	if (!itIsStarted) {
+		return;
+	}
 	// move from Top
 	if (event.keyCode == 38) {
 		// get step
@@ -182,11 +189,11 @@ function removePointsInsideBall(ball) {
 			continue;
 		}
 
-		// distance from ball bottom to top must be greather than point offset top
+		// distance from ball bottom to top must be grater than point offset top
 		if (ballBottomOffsetToTop >= pointsPosition[i].offsetTop) {
 			// distance from ball top to top must be less than point offset top
 			if (ballTopOffsetToTop <= pointsPosition[i].offsetTop) {
-				// distance from ball right to left must be greather than point offset left
+				// distance from ball right to left must be grater than point offset left
 				if (ballRightOffsetToLeft >= pointsPosition[i].offsetLeft) {
 					// distance from ball left to left must be less than point offset left
 					if (ballLeftOffsetToLeft <= pointsPosition[i].offsetLeft) {
@@ -253,7 +260,7 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// functoin to create the balls in it
+// Function to create the balls in it
 function createBalls() {
 	countPoints++;
 
@@ -326,7 +333,7 @@ function calculateStepForRightBallMovement() {
 
 // This function will calculate maximum step allowed for ball to move
 function calculateTheDestanceForStepTop() {
-	// local varible for move step
+	// local variable for move step
 	var step = moveStep;
 
 	// get the offsetTop of the ball
@@ -343,7 +350,7 @@ function calculateTheDestanceForStepTop() {
 
 // This function will calculate maximum step allowed for ball to move
 function calculateTheDestanceForStepDown() {
-	// local varible for move step
+	// local variable for move step
 	var step = moveStep;
 
 	// get the height of the place
@@ -369,7 +376,7 @@ function calculateTheDestanceForStepDown() {
 
 // This function will calculate maximum step allowed for ball to move
 function calculateTheDestanceForStepLeft() {
-	// local varible for move step
+	// local variable for move step
 	var step = moveStep;
 
 	// get offset of the ball
@@ -390,6 +397,7 @@ let sec = 0; // 1 second timer
 
 // Start count down
 function startTimer() {
+	itIsStarted = true;
 	min = parseInt(timer / 60);
 	sec = parseInt(timer % 60);
 
@@ -399,6 +407,7 @@ function startTimer() {
 	}
 
 	if (timer == 0) {
+		itIsStarted = false;
 		if (score <= 90) {
 			modalsResult('#one-star');
 		}

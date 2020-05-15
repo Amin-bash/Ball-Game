@@ -1,5 +1,90 @@
- .chang-w-h{
-    height: 100%
+.body {
+    font-style: italic;
+}
+
+.score-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 750px;
+    margin: 0 0 0 auto;
+}
+
+.score-section {
+    background-color: #ffe029;
+    border-radius: 5px;
+    width: 300px;
+    padding: 12px 12px;
+}
+
+.username-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #e5e5e5;
+    border-radius: 5px;
+    width: 300px;
+    padding: 12px 12px;
+}
+
+.username-section h4 {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.username-section h5 {
+    margin-bottom: 0;
+}
+
+.play-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 23px;
+}
+
+.info-section {
+    width: 300px;
+    height: 600px;
+}
+
+.card-title {
+    text-align: center;
+    padding: 12px;
+    background: #e5e5e5;
+    margin-bottom: 0;
+}
+
+.card-body {
+    background: #343a40;
+    color: white;
+}
+
+.card-body i {
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.card-body p {
+    display: flex;
+    align-items: center;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.playground-section {
+    width: 750px;
+    position: relative;
+}
+
+.bg-playground{
+    height: 100%;
+    background: #343a40;
+    border-radius: 5px;
 }
 .position{
     position: absolute;;
@@ -8,48 +93,50 @@
     height: 75px;
     width: 75px;
     text-align: center;
-    /* float: left; */
 }
-.max-height {
-    max-height: 570px;
+
+.position .fa-arrow-circle-up {
+    margin-top: 2px;
 }
-.font{
-    font-size: 23px;
+
+.position .fa-arrow-circle-down {
+    margin-top: -2px;
 }
-.margin{
-    margin-right: 30px;
+
+.position .fa {
+    font-size: 25px;
+    color: red;
 }
-.font:hover{
-    cursor: pointer;
+
+.position p {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -3px;
+    padding: 0 2px;
 }
-.point-position{
-    position: relative;
-}
+
 #time{
     margin-left: 10px;
 }
-.mr-t{
-    margin-top: -3px;
-}
+
 .bg-title-img{
     text-align: center;
-    padding-top: 19px;
+    padding-top: 20px;
     background-color: #ffe000;
 }
+
 .img-title{
     width: 270px;
-}
-.margin-auto{
-    margin: auto;
-}
-
-body{
-    background-color: #b05bffd9;
+    text-align: center;
 }
 
 .bg-footer{
     background-color: #343a40e0;
 }
+
+
 .points{
     position: absolute;
     background-color: #ff0000;
@@ -59,111 +146,60 @@ body{
     border-radius: 50px;
     height: 25px;
 }
-.bg-card-title{
-    padding: 16px;
-    border-radius: 2px;
-    color: white;
-    font-weight: bold;
-}
-.fix-score{
-    position: relative;
-    right: 15px;
-    bottom: 14px;
-    margin-top: 44px;
-}
-.fix-ur-name{
-    position: relative;
-    right: 33px;
-    bottom: 2px;
-    margin-top: 25px;
-    padding: .25px;
-}
-.p-and-textLeft{
-    padding: 5px 0px 1px 0px;
-    text-align: left;
-}
-.height-card{
-    height: 100%;
-}
-.fnt-itaic{
-    font-style: italic;
-}
-.line-height{
-    line-height: 1.4;
-}
-.bg-green{
-    background-color: #007968;
-}
-.fix-inThe-middle{
-    margin-right: 15px;
-    margin-left: 55px;
-}
-.p-score{
-    padding: 4px;
-}
-.last-arrow-explain{
-    margin-bottom: 0;
-}
+
 .none{
     visibility: visible;
 }
-.fnt-card1{
-    font-size: 16px;
-}
-.fnt-card-title{
-    font-size: 20px;
-}
-.footer-card{
-    font-size: 20px;
-}
+
+
 @media(max-width: 1199px){
-    .fnt-card1{
-        font-size: 15px;
+    .bg-playground {
+        margin-left: 12px;
     }
-    .fnt-card-title{
-        font-size: 18px;
+
+    .score-name-container {
+        margin: 0 auto;
     }
-    .footer-card{
-        font-size: 17px;
+    .info-section {
+        height: 500px;
     }
 }
+
 @media(max-width: 991px){
-    .fix-inThe-middle {
-         margin-right: 0; 
-         margin-left: 0; 
-         margin-bottom: 15px;
-    }
-    .last-arrow-explain{
-        margin-bottom: 20px;
-    }
     .none{
         visibility: hidden;
     }
-    .chang-w-h{
-        height: 43000%;
+    .info-section {
+        width: 100%;
+        height: unset;
+    }
+    .play-info-container {
+        flex-direction: column-reverse;
+    }
+    .playground-section {
+        width: 100%;
+        height: 450px;
+        margin-bottom: 12px;
+    }
+    .bg-playground {
+        margin-left: 0;
     }
 }
-@media(max-width: 766px){
-    .fix-ur-name{
-        position: relative;
-        margin-bottom: 7px;
-        width: 94%;
-        left: 15px;
-        margin-top: 0;
-        
+
+@media(max-width: 768px){
+
+    .playground-section {
+        height: 400px;
     }
-    .fix-inThe-middle {
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 7px;
+
+    .score-section {
+        margin-bottom: 8px;
     }
-    .fix-score {
-        position: relative;
-        bottom: 9px;
-        margin-top: 20px;
-        width: 94%;
-        left: 16px;
+
+    .score-section h5 {
+        margin-bottom: 2px;
     }
+
     .points {
         position: absolute;
         background-color: #ff0000;
@@ -171,6 +207,11 @@ body{
         color: red;
         width: 4%;
         border-radius: 50px;
+    }
+    .score-name-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
     }
 }
 @media(max-width: 470px) {
@@ -188,41 +229,9 @@ body{
         width: 6%;
         border-radius: 50px;
     }
-    .fix-ur-name {
-        position: relative;
-        margin-bottom: 7px;
-        width: 298px;
-        left: 15px;
-        margin-top: 0;
-    }
-    .fix-score {
-        position: relative;
-        bottom: 9px;
-        margin-top: 20px;
-        width: 298px;
-        left: 16px;
-    }
-    .chang-w-h{
-        height: 35000%
-    }
 }
+
 @media(max-width: 375px){
-    .font{
-        font-size: 16px;
-    }
-    .position {
-        height: 58px;
-        width: 60px;
-    }
-    .mr-t {
-        margin-top: -6px;
-        height: 18px;
-
-    }
-    .margin {
-        margin-right: 20px;
-    }
-
     #time{
         font-size: 27px;
         margin-left: 10px;
